@@ -1,6 +1,35 @@
-<img width="1398" height="780" alt="изображение" src="https://github.com/user-attachments/assets/595d8b67-ecfd-4836-9359-34a98d91df99" />
-<img width="1417" height="771" alt="изображение" src="https://github.com/user-attachments/assets/0dcd3f47-5514-4c32-905a-c9057a0750f1" />
-<img width="1392" height="772" alt="изображение" src="https://github.com/user-attachments/assets/c3d5e90f-e737-4401-8a5b-a985c3a7e44b" />
-<img width="1380" height="778" alt="изображение" src="https://github.com/user-attachments/assets/3ff10104-3c47-4041-b2e6-4ec0ac49ef69" />
-<img width="1400" height="682" alt="изображение" src="https://github.com/user-attachments/assets/c187a237-826d-4d6f-a667-5601bb7ce2b1" />
-<img width="1354" height="673" alt="изображение" src="https://github.com/user-attachments/assets/25a71658-3eba-4fed-b9bb-1e45109e3f6b" />
+# Задание 2. Настройка загрузчика
+
+## Измените поведение меню GRUB.
+
+1.Открыл файл настроек `sudo nano /etc/default/grub`
+
+2.Нашел и изменил два параметра
+
+`GRUB_TIMEOUT=10` - Время, в течение которого показывается меню загрузки, перед тем как автоматически загрузится выделенная ос
+
+`GRUB_TIMEOUT_STYLE=menu` - Показывает меню для выбора нужной ос
+
+<img width="947" height="756" alt="изображение" src="https://github.com/user-attachments/assets/e22fcada-4b08-4970-afb3-5f3d1f1d888e" />
+
+3.Пересобрал меню `sudo update-grub`
+
+<img width="868" height="595" alt="изображение" src="https://github.com/user-attachments/assets/126d55bb-c1da-41ce-8eb3-49b8cbbe8e59" />
+
+4.Перезагрузился и убедился, что меню теперь висит 10 секунд `sudo reboot`
+
+<img width="641" height="480" alt="изображение" src="https://github.com/user-attachments/assets/f0cdb82d-051a-411d-94b9-38d967df3cd0" />
+
+## Итог
+
+### Какие параметры изменили и что они означают
+
+Я изменил 2 параметра:
+
+`GRUB_TIMEOUT=10` обозначает время, в течение которого показывается меню загрузки, перед тем как автоматически загрузится выделенная ос
+
+`GRUB_TIMEOUT_STYLE=menu` показывает меню для выбора нужной ос
+
+### Ответьте на вопрос: что было бы, если бы вы забыли выполнить `update-grub` ?
+
+Если бы я забыл выполнить `update-grub` то файл изменится, но GRUB его бы не считал и ос запустилась бы в стандартном режиме, без изменений
